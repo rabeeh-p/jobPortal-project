@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css ' %}">
+   
+</head>
+<body>
+      <div class="body_bg"  style="height: 1100px; ">
+        <h1 style="text-align: center; padding-top: 20px; font-family: 'Courier New', Courier, monospace; ">Edit your profile</h1>
+        
+        <div class="row d-flex justify-content-center" style="margin-top: 40px;">
+            <div class="col-md-8 col-lg-6">
+            <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+                <div class="card-body p-4">
+                <div class="form-outline mb-4">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" id="addANote" class="form-control" placeholder="first_name"    name="f_name"/>
+    
+                        <input type="text" id="addANote" class="form-control mt-3" placeholder="last_name"   name="l_name"/>
+                        <input type="text" id="addANote" class="form-control mt-3" placeholder="email"   name="email"/>
+                        <input type="text" id="addANote" class="form-control mt-3" placeholder="phone_number"   name="number"/>
+                        <input type="text" id="addANote" class="form-control mt-3" placeholder="experience"   name="exp"/>
+                        <input type="text" id="addANote" class="form-control mt-3" placeholder="job role"  name="department"/>
+                        <input type="file" accept="image/*" id="addANote" class="form-control mt-3" placeholder="image"  name="image01"/>
+                        
+                        <input type="date" id="addANote" class="form-control mt-3" placeholder="DOP"  name="dop"/>
+                        
+                        <select class="browser-default custom-select form-control mt-3"  name="gender1">
+                          <option selected>gender</option>
+                          {% for i in gnd %}
+                          <option value="{{i.id}}">{{i.section}}</option>
+                          {% endfor %}
+                         
+                          
+                        </select>
+    
+                        <select class="browser-default custom-select form-control mt-3" name="marital">
+                          <option selected>marital status</option>
+                          {% for i in marital %}
+                          <option value="{{i.id}}">{{i.category}}</option>
+                          {% endfor %}
+                         
+                          
+                        </select>
+    
+                        <input type="submit" class="btn mt-4 " style="margin-left: 340px; font-size: larger; font-weight: bolder;" value="submit">
+                    </form>
+                </div>
+                {% for s in skl %}          
+                <div class="card mb-4">
+                    <div class="card-body">
+                    <li> {{s.skills}}</li>         
+                    </div>
+                </div>
+                {% endfor %}  
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

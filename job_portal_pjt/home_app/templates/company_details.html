@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+          width: 300px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .container h2 {
+          text-align: center;
+        }
+        .container label, .container input {
+          display: block;
+          margin-bottom: 10px;
+        }
+        .container input[type="submit"] {
+          width: 100%;
+          padding: 10px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          cursor: pointer;
+        }
+        .container input[type="submit"]:hover {
+          background-color: #45a049;
+        }
+      </style>
+</head>
+<body>
+
+    
+
+  <div class="container">
+    <h2>COMPANY DETAILS</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+
+      <label for="">Photo:</label>
+        <input type="file" accept="images/*" name="image1234">
+
+      <label for="">Description:</label>
+      <input type="text"  name="des" >
+
+      <label for="">Industry:</label>
+      <input type="text"  name="ind" >
+
+
+      <label for="">Location:</label>
+      <input type="text"  name="location" >
+
+      <label for="">Website:</label>
+      <input type="text"  name="web" >
+
+      <label for="">Phone:</label>
+      <input type="text"  name="phone" >
+
+      <label for="">founded date:</label>
+      <input type="date"  name="date" >
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+
+    
+</body>
+</html>

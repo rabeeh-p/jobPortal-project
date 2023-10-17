@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <style>
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .container h2 {
+      text-align: center;
+    }
+    .container label, .container input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .container input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="body_bg" style="height: 1100px;">
+    <div class="container">
+      <h2>Job appley</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="username">resume:</label>
+        <input type="file" accept="image/*"  name="image" >
+
+        
+
+        <input type="submit" value="Appley">
+      </form>
+      
+    </div>
+    <!--  -->
+    
+  </div>
+  
+</body>
+</html>

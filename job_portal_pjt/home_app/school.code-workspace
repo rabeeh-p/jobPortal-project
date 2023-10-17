@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": "../../../school"
+		},
+		{
+			"path": "../../../project django"
+		},
+		{
+			"path": "../../../Users/91854/OneDrive/Desktop/poco/project test html"
+		},
+		{
+			"path": "../../../code/blog123"
+		},
+		{
+			"path": "../../../js"
+		},
+		{
+			"path": "../../../Debug Media"
+		},
+		{
+			"path": "../../../books"
+		},
+		{
+			"path": "../../../sample project"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../react js"
+		},
+		{
+			"path": "../../../amrutha project"
+		},
+		{
+			"path": "../../../Netflix-react"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project test html"
+	}
+}

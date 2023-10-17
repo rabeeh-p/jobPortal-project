@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .h1{
+            height: 1100px;
+            width: 1600px;
+        }
+        .div{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body >
+    <div class="h1">
+        <div class=" h1 body_bg layout_padding" style="text-align: center;" >
+            <h1>You are already applied!</h1>
+            <div class="div">
+                <a href="{% url 'emp-home' %}"> Back to Home</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

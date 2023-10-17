@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0px;
+        }
+    
+        .profile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          position: relative;
+          margin-left: 35%;
+          top: 80px;
+          
+          max-width: 400px;
+          background-color: #f5f5f5;
+          border-radius: 8px;
+          padding: 20px;
+        }
+    
+        .profile img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 20px;
+        }
+    
+        .profile h2 {
+          margin: 0;
+          font-size: 24px;
+          color: #333;
+        }
+    
+        .profile p {
+          margin: 5px 0;
+          font-size: 16px;
+          color: #777;
+        }
+    
+        .profile a {
+          color: #777;
+          text-decoration: none;
+        }
+    
+        @media screen and (max-width: 480px) {
+          .profile {
+            max-width: 300px;
+          }
+    
+          .profile img {
+            width: 120px;
+            height: 120px;
+          }
+    
+          .profile h2 {
+            font-size: 20px;
+          }
+    
+          .profile p {
+            font-size: 14px;
+          }
+        }
+      </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+  
+</head>
+<body>
+    <body class="sub_page" >
+        <div class="hero_area">
+          <!-- header section strats -->
+          <header class="header_section">
+            <div class="container">
+              <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                <a class="navbar-brand mr-5" href="index.html">
+                  <img src="{% static 'images/logo.png' %}" alt="">
+                  <span>
+                    Job Portal
+                  </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav  ">
+                      <li class="nav-item ">
+                        <a class="nav-link" href="">Profile <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href=""> Create </a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="service.html"> Service </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                      </li>
+                    </ul>
+                    <form class="form-inline">
+                      <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </header>
+          <!-- end header section -->
+        </div>
+        <div class="body_bg" style="height: 1100px; padding: 0; margin: 0; ">
+    
+            
+
+
+            <div class="profile" style="background-color: rgb(255, 198, 124);">
+                <img src="{{ emp.image.url }}" alt="Profile Picture">
+                <h2>{{emp.first_name}}</h2>
+                <p>DOB: {{emp.date_of_birth}}</p>
+                <p>department : {{emp.department}}</p>
+                <p>Education: {{emp.education}}</p>
+                <p>Email: {{emp.email}}</p>
+                <p>Phone: {{emp.phone_number}}</p>
+                
+            </div>
+        </div>
+    
+</body>
+</html>
